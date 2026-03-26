@@ -1,0 +1,9 @@
+.env*
+!.env.example
+internal/
+__pycache__/
+.pytest_cache/
+.venv/
+
+# Local assignment brief; do not submit with the repo if your instructions say not to
+tasks.md

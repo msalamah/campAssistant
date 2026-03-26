@@ -1,0 +1,27 @@
+[project]
+name = "camp-assistant"
+version = "0.1.0"
+description = "Summer Camp Registration Assistant - ML Engineer Home Assignment"
+requires-python = ">=3.11"
+dependencies = [
+    "langchain>=0.3.0",
+    "langchain-openai>=0.2.0",
+    "langgraph>=0.2.0",
+    "openai>=1.0.0",
+    "pydantic>=2.0.0",
+    "python-dotenv>=1.0.0",
+    "gradio>=5.0.0",
+    "pytz>=2024.1",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+markers = [
+    "e2e_live: optional tests that call OpenAI (needs --e2e-live or E2E_USE_REAL_LLM)",
+]
+
+[tool.uv]
+dev-dependencies = [
+    "pytest>=8.0.0",
+    "langsmith>=0.1.0",
+]

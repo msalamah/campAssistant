@@ -1,0 +1,231 @@
+{
+  "camps": [
+    {
+      "camp_id": "camp-1",
+      "name": "Soccer Stars",
+      "location": "North Field",
+      "start_date": "2026-07-14",
+      "end_date": "2026-07-18",
+      "time_slot": "09:00-12:00",
+      "capacity": 15,
+      "enrolled": 4,
+      "min_age": 8,
+      "max_age": 12,
+      "status": "open",
+      "price": 200
+    },
+    {
+      "camp_id": "camp-2",
+      "name": "Art Adventure",
+      "location": "Community Center",
+      "start_date": "2026-07-14",
+      "end_date": "2026-07-18",
+      "time_slot": "09:00-12:00",
+      "capacity": 12,
+      "enrolled": 12,
+      "min_age": 6,
+      "max_age": 10,
+      "status": "open",
+      "price": 180
+    },
+    {
+      "camp_id": "camp-3",
+      "name": "Coding Kids",
+      "location": "Tech Lab",
+      "start_date": "2026-07-21",
+      "end_date": "2026-07-25",
+      "time_slot": "13:00-16:00",
+      "capacity": 10,
+      "enrolled": 2,
+      "min_age": 10,
+      "max_age": 14,
+      "status": "open",
+      "price": 250
+    },
+    {
+      "camp_id": "camp-4",
+      "name": "Swimming Basics",
+      "location": "City Pool",
+      "start_date": "2026-07-14",
+      "end_date": "2026-07-18",
+      "time_slot": "13:00-15:00",
+      "capacity": 8,
+      "enrolled": 1,
+      "min_age": 6,
+      "max_age": 9,
+      "status": "open",
+      "price": 150
+    },
+    {
+      "camp_id": "camp-5",
+      "name": "Drama Club",
+      "location": "Theater Room",
+      "start_date": "2026-07-21",
+      "end_date": "2026-07-25",
+      "time_slot": "09:00-12:00",
+      "capacity": 15,
+      "enrolled": 0,
+      "min_age": 7,
+      "max_age": 13,
+      "status": "cancelled",
+      "price": 175
+    },
+    {
+      "camp_id": "camp-6",
+      "name": "Science Explorers",
+      "location": "Science Wing",
+      "start_date": "2026-07-14",
+      "end_date": "2026-07-18",
+      "time_slot": "09:00-12:00",
+      "capacity": 10,
+      "enrolled": 3,
+      "min_age": 8,
+      "max_age": 11,
+      "status": "open",
+      "price": 220
+    }
+  ],
+  "kids": [
+    {
+      "kid_id": "kid-1",
+      "name": "Emma Thompson",
+      "birth_date": "2016-03-15",
+      "age": 10,
+      "parent_name": "Sarah Thompson",
+      "parent_email": "sarah.t@email.com",
+      "parent_phone": "+1-555-0101"
+    },
+    {
+      "kid_id": "kid-2",
+      "name": "Liam Chen",
+      "birth_date": "2018-08-22",
+      "age": 7,
+      "parent_name": "Wei Chen",
+      "parent_email": "wei.chen@email.com",
+      "parent_phone": "+1-555-0102"
+    },
+    {
+      "kid_id": "kid-3",
+      "name": "Emma Wilson",
+      "birth_date": "2015-11-30",
+      "age": 10,
+      "parent_name": "Mike Wilson",
+      "parent_email": "m.wilson@email.com",
+      "parent_phone": null
+    },
+    {
+      "kid_id": "kid-4",
+      "name": "Noah Martinez",
+      "birth_date": "2014-06-10",
+      "age": 12,
+      "parent_name": "Ana Martinez",
+      "parent_email": "ana.m@email.com",
+      "parent_phone": "+1-555-0104"
+    },
+    {
+      "kid_id": "kid-5",
+      "name": "Olivia Brown",
+      "birth_date": "2019-01-25",
+      "age": 7,
+      "parent_name": "James Brown",
+      "parent_email": null,
+      "parent_phone": "+1-555-0105"
+    },
+    {
+      "kid_id": "kid-6",
+      "name": "Ethan Davis",
+      "birth_date": "2012-04-18",
+      "age": 14,
+      "parent_name": "Lisa Davis",
+      "parent_email": "lisa.d@email.com",
+      "parent_phone": "+1-555-0106"
+    },
+    {
+      "kid_id": "kid-7",
+      "name": "Sophia Lee",
+      "birth_date": "2017-09-08",
+      "age": 8,
+      "parent_name": "David Lee",
+      "parent_email": "david.lee@email.com",
+      "parent_phone": "+1-555-0107"
+    },
+    {
+      "kid_id": "kid-8",
+      "name": "Lucas Garcia",
+      "birth_date": "2016-02-14",
+      "age": 10,
+      "parent_name": "Maria Garcia",
+      "parent_email": "m.garcia@email.com",
+      "parent_phone": "+1-555-0108"
+    },
+    {
+      "kid_id": "kid-9",
+      "name": "Ava Johnson",
+      "birth_date": "2018-07-03",
+      "age": 7,
+      "parent_name": "Chris Johnson",
+      "parent_email": "c.johnson@email.com",
+      "parent_phone": "+1-555-0109"
+    },
+    {
+      "kid_id": "kid-10",
+      "name": "Mia Chen",
+      "birth_date": "2017-05-12",
+      "age": 9,
+      "parent_name": "Wei Chen",
+      "parent_email": "wei.chen@email.com",
+      "parent_phone": "+1-555-0102"
+    }
+  ],
+  "registrations": [
+    {
+      "registration_id": "reg-1",
+      "kid_id": "kid-1",
+      "camp_id": "camp-1",
+      "status": "confirmed",
+      "registered_at": "2026-06-01T10:30:00"
+    },
+    {
+      "registration_id": "reg-2",
+      "kid_id": "kid-2",
+      "camp_id": "camp-4",
+      "status": "confirmed",
+      "registered_at": "2026-06-02T14:15:00"
+    },
+    {
+      "registration_id": "reg-3",
+      "kid_id": "kid-4",
+      "camp_id": "camp-1",
+      "status": "confirmed",
+      "registered_at": "2026-06-03T09:00:00"
+    },
+    {
+      "registration_id": "reg-4",
+      "kid_id": "kid-1",
+      "camp_id": "camp-3",
+      "status": "pending",
+      "registered_at": "2026-06-10T11:00:00"
+    },
+    {
+      "registration_id": "reg-5",
+      "kid_id": "kid-4",
+      "camp_id": "camp-3",
+      "status": "confirmed",
+      "registered_at": "2026-06-05T16:30:00"
+    },
+    {
+      "registration_id": "reg-6",
+      "kid_id": "kid-7",
+      "camp_id": "camp-6",
+      "status": "waitlisted",
+      "registered_at": "2026-06-08T13:45:00"
+    },
+    {
+      "registration_id": "reg-7",
+      "kid_id": "kid-10",
+      "camp_id": "camp-1",
+      "status": "pending",
+      "registered_at": "2026-03-26T23:20:15"
+    }
+  ]
+}
