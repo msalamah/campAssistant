@@ -51,19 +51,19 @@ Create a local `.env` file from `.env.example`.
 
 Minimal `.env` for local app use:
 
-"""bash
+```bash
 OPENAI_API_KEY="your-openai-api-key"
-"""
+```
 
 Optional tracing and live E2E example:
 
-"""bash
+```bash
 OPENAI_API_KEY="your-openai-api-key"
 LANGCHAIN_TRACING_V2=true
 LANGCHAIN_PROJECT="camp-assistant-e2e"
 LANGCHAIN_API_KEY="your-langsmith-api-key"
 E2E_USE_REAL_LLM=false
-"""
+```
 
 ---
 
