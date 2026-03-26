@@ -14,15 +14,18 @@ The assistant can:
 
 The system uses a local mock database in `mock_db.json`. Facts come from tools, not from free-form model memory.
 
+For a deeper explanation of the system design, state model, confirmation flow, and waitlist behavior, see `ARCHITECTURE.md`.
+
 ---
 
 ## Setup
 
-1. Put your OpenAI API key in `.env`.
+1. Copy `.env.example` to `.env`.
 2. Install dependencies.
 3. Run the app.
 
 """bash
+cp .env.example .env
 uv sync
 uv run python agent.py
 """
@@ -32,6 +35,35 @@ The app starts a Gradio debug UI in the browser.
 **Model:** `gpt-4o-mini`
 
 **Important:** `.env` is gitignored. Do not commit or push your API key.
+
+## Environment Variables
+
+Create a local `.env` file from `.env.example`.
+
+| Variable | Required | Purpose |
+| --- | --- | --- |
+| `OPENAI_API_KEY` | Yes for the Gradio app and live OpenAI tests | Used by `ChatOpenAI` in the assistant |
+| `LANGCHAIN_TRACING_V2` | No | Enables LangSmith / LangChain tracing when set to `true` |
+| `LANGCHAIN_PROJECT` | No | Sets the LangSmith project name; defaults to `camp-assistant-e2e` in test flows when tracing is enabled |
+| `LANGCHAIN_API_KEY` | No | Auth token for LangSmith tracing |
+| `LANGSMITH_API_KEY` | No | Alternative auth variable for LangSmith tracing |
+| `E2E_USE_REAL_LLM` | No | Enables optional live OpenAI E2E tests when set to `1`, `true`, or `yes` |
+
+Minimal `.env` for local app use:
+
+"""bash
+OPENAI_API_KEY="your-openai-api-key"
+"""
+
+Optional tracing and live E2E example:
+
+"""bash
+OPENAI_API_KEY="your-openai-api-key"
+LANGCHAIN_TRACING_V2=true
+LANGCHAIN_PROJECT="camp-assistant-e2e"
+LANGCHAIN_API_KEY="your-langsmith-api-key"
+E2E_USE_REAL_LLM=false
+"""
 
 ---
 
@@ -208,6 +240,8 @@ There are two state stores in the current design.
   - `last_tool_result`
 
 This split keeps the graph simple, while still giving the assistant explicit state for transactions.
+
+More implementation detail is documented in `ARCHITECTURE.md`.
 
 ### Why the agent does not rely only on chat history
 
@@ -388,20 +422,3 @@ This matters because the mock data includes child information and parent contact
 | `ARCHITECTURE.md` | Detailed architecture and implementation notes |
 | `SUBMISSION_CHECKLIST.md` | Pre-submit checklist |
 | `tests/` | Unit, integration, and E2E tests |
-
----
-
-## Submission
-
-Submit the solution as a git repository or zip.
-
-Before submitting:
-- do not commit `.env`
-- do not commit API keys
-- do not submit `tasks.md`
-- make sure the app starts with the commands below
-
-"""bash
-uv sync
-uv run python agent.py
-"""

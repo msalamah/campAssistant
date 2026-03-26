@@ -59,31 +59,6 @@ flowchart TB
   ca -->|"UI flag from graph_is_paused"| AS
 ```
 
-### Possible simplification (not implemented)
-
-If you move **`AssistantState`** fields (or a nested `assistant` snapshot) **into** the LangGraph `State` TypedDict, **checkpointing** would persist **transactional** fields together with **`messages`**. Nodes would **read/write one** schema; **`CampAssistant`** could become a thin coordinator or disappear in favor of graph-only orchestration. You would define **merge rules** for each field (e.g. replace vs reducer for `messages`).
-
-```mermaid
-flowchart TB
-  subgraph st [Single checkpointed state]
-    GS["CampGraphState extended\nmessages\nproposal_pending\nintent, selected_*_id\ncandidate_kids / candidate_camps\nawaiting_confirmation\npending_action, last_tool_result"]
-  end
-  subgraph lg [LangGraph + MemorySaver]
-    START([START]) --> AN[agent node\nrun_tool_loop]
-    AN --> R{proposal_pending?}
-    R -->|no| E1([END])
-    R -->|yes| IB[[interrupt_before\nhuman_approve]]
-    IB --> HA[human_approve\nclear or confirm]
-    HA --> E2([END])
-  end
-  AN <-->|"read/write"| GS
-  HA <-->|"optional updates on reject"| GS
-```
-
-**Difference in one line:** *today* transactional fields mostly live on **`CampAssistant`**; *unified* they would live in **LangGraph state** so every resume replays the same structured snapshot.
-
-This refactor is not needed for the current scope, but it would reduce the amount of state mirrored between `CampAssistant` and LangGraph.
-
 ## Deterministic code vs LLM
 
 | Concern | Deterministic (Python) | LLM |
