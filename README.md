@@ -20,15 +20,15 @@ For a deeper explanation of the system design, state model, confirmation flow, a
 
 ## Setup
 
-1. Copy `.env.example` to `.env`.
+1. Copy the committed template `.env.example` to `.env` and set your secrets there (only `.env` is ignored by git, not `.env.example`).
 2. Install dependencies.
 3. Run the app.
 
-"""bash
+```bash
 cp .env.example .env
 uv sync
 uv run python agent.py
-"""
+```
 
 The app starts a Gradio debug UI in the browser.
 
@@ -308,9 +308,9 @@ These tests check deterministic business rules on a copy of the database.
 
 Run all tests:
 
-"""bash
+```bash
 uv run pytest tests/ -q
-"""
+```
 
 ### 2. Scripted end-to-end tests
 
@@ -334,15 +334,15 @@ The project also supports optional live OpenAI E2E tests and manual testing in G
 
 Run live E2E:
 
-"""bash
+```bash
 uv run pytest tests/e2e/ -v --e2e-live
-"""
+```
 
 Run the app for manual testing:
 
-"""bash
+```bash
 uv run python agent.py
-"""
+```
 
 ### LangSmith support
 
@@ -350,11 +350,11 @@ LangSmith tracing is supported for the graph, model, and tool calls.
 
 Set tracing variables if you want live traces:
 
-"""bash
+```bash
 export LANGCHAIN_TRACING_V2=true
 export LANGCHAIN_API_KEY=...
 export LANGCHAIN_PROJECT=camp-assistant-e2e
-"""
+```
 
 ### Review metrics
 

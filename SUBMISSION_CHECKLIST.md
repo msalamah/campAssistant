@@ -9,7 +9,7 @@ Use this list before you share your solution (zip or git link). Check items off 
 - [ ] **`tasks.md` is not in the submission.** The assignment brief file is listed in `.gitignore` so it is not committed by default. If you already committed it earlier, remove it from the repo before submitting:  
   `git rm --cached tasks.md`  
   then commit, and keep `tasks.md` only on your machine if you still need it.
-- [ ] **No secrets:** `.env` / API keys are not committed (`.gitignore` covers `.env*`).
+- [ ] **No secrets:** `.env` / API keys are not committed (`.gitignore` covers `.env` and `.env.local`; `.env.example` is safe to commit).
 
 ---
 
